@@ -1,0 +1,35 @@
+#results {margin-left:0%; margin-right:0%;}
+p.images {display: inline;}
+p.images img {
+    width: 170px;
+    height: 160px;
+	float: none;
+    cursor: pointer;
+    /*GIF to play while image is loading. It's a background image!*/
+    /*CSS takes image relative to CSS file. '../' = Back 1 folder*/
+    background: url("./icons/loading.gif") no-repeat center center;
+}
+
+/*Code for "image link copied!" popup*/
+#popup{
+    /*Disguise on image click popup in site background. Eliminate need to hide!*/
+    color:white;
+}
+.popupStyle {
+    /*Sets at bottom center*/
+    /*This uses -ve margins: Margin-left is -1/2 of <div> width. left:50% = center align*/
+    position: sticky;
+    left: 85%;
+    width: 200px;
+    z-index: 7;
+    
+    bottom: 5%;
+    height: auto;
+    padding: 10px;   
+    background-color:black;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+

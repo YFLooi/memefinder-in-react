@@ -1,0 +1,163 @@
+/*Column width control*/
+/* navbar hide/reveal code: https://stackoverflow.com/questions/25211090/how-to-auto-adjust-the-div-size-for-all-mobile-tablet-display-formats */
+/*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
+@media screen and (min-width: 701px){
+    .col-1 {
+        width: 19%; 
+        height: 100%;
+        margin-right: 5px;
+        z-index: 0;
+    } /*sidebar. Be wary of specifying 'width' or 'height' twice*/
+    .col-2 {
+        width: 80%;
+    } /*query*/
+    .col-3 {
+        width: 80%;
+    } /*Results*/
+    .categories {
+        width: 100%;
+        position: relative;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        text-align: left;
+        padding-left:10px;
+    }
+    .navButton {
+       display: none;
+    }
+    .quicklink{
+        /*Makes <button> resemble <a>*/
+        background:none!important;
+        border:none; 
+        
+        padding: 8px 8px 8px 0px!important;
+        text-decoration: none;
+        font-size: 15px;
+        color: #087;
+        display: block;
+        transition: 0s;
+        cursor: pointer;
+    }
+    .quicklink:hover{
+        color: blue;
+    }
+    .closeButton{ 
+        display: none;
+    }
+}
+/*### Smartphones (portrait and landscape)(small). Tablets taken as 768-1023px ### */
+@media screen and (min-width : 0px) and (max-width : 700px){
+    .col-1{ /*acts as an overlay to categories*/
+        position: fixed;
+        display: none;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow-y:scroll;
+        -webkit-overflow-scrolling:touch;
+        background-color: rgba(0,0,0,0.5); /*Adds a shadow to denote the overlay area to click to exit*/
+    } 
+    .col-2 {width: 100%;} /*query*/
+    .col-3 {width: 100%;} /*Results*/
+
+    .navButton {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        bottom : 5%;
+        right: 15%;
+        z-index: 2;
+    
+        margin: auto;
+        font-size: 30px; 
+        background-color: #087;
+        
+        width: 50px;
+        height: 50px;
+        padding-top: 3px;
+        text-align: center;
+        border-radius: 300px;
+    }
+    .categories {
+        margin: 0 auto;
+        width: 90%;
+        position: relative; 
+        text-align: center;
+    }
+
+    .quicklink{
+        /*Makes <button> resemble <a>*/
+        background:none!important;
+        border:none; 
+        
+        padding: 8px 8px 8px 0px!important;
+        text-decoration: none;
+        font-size: 15px;
+        color: whitesmoke;
+        display: block;
+        transition: 0s;
+        cursor: pointer;
+
+        position: relative; 
+        margin: 0 auto; /*Centers the #guide*/
+    }
+    .quicklink:hover{
+        color: blue;
+    }
+    .closeButton{ 
+        margin: 8px 8px 8px 0px;
+        padding: 2px 8px 2px 8px;
+        font-size: 15px;
+    }
+}
+
+/*General formatting*/
+html, body, div, p, h1, h2 {font-family: Verdana, "Lucida Sans", sans-serif;}
+html, body, div, p  {font-weight: normal;}
+body {background-color: #fff;}
+
+h2, h3 {font-weight: bold; color: #087;}
+sup {font-weight: normal;}
+
+html, body, div, p  {font-size: 12px;}
+h1 {font-size: 20px; font-weight: bold; color:  rgb(78, 221, 204); text-shadow: 3px 2px black; margin-left:0.8%;}
+h2 {font-size: 16px; clear: left;}
+h3 {font-size: 14px; clear: left;}
+
+/*Responsive column arrangement*/
+/* For desktop. Reminds me of Bootstrap and its 12 columns.*/
+/*
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+*/
+
+/*Float all in the same row (col-1, col-2) left so that they stack from left*/
+/*Left stacking follows sequence in HTML code*/
+[class*="col-"] {
+    float: left;
+    padding: 0px;
+}
+
+/*Ensures column after .row can apply new width instead of competing with previous ones
+.row1::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.row2::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+*/

@@ -1,0 +1,35 @@
+/*Formats the guide*/
+#guideOverlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4; /*Allows the sidebar <div> to stack on top of all other <div>-s. Number = Stack Order*/
+    background-color: rgba(0,0,0,0.5); /*Adds a shadow to denote the overlay area to click to exit*/
+    
+    /*Scolling takes place in the overlay, NOT the <div> within the overlay*/
+    overflow-y:scroll;
+    -webkit-overflow-scrolling:touch;
+}
+#guide{
+    position: relative; 
+    margin: 0 auto; /*Centers the #guide*/
+    width: 350px;
+    padding: 5px 5px 5px 5px;
+    height: auto; 
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+.guideButton{ 
+    margin: 8px 8px 8px 0px;
+    padding: 2px 8px 2px 8px;
+    font-size: 15px;
+}
+
+
+
+
+

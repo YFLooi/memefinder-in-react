@@ -1,0 +1,13 @@
+/*For the <form> searchbox*/
+.application{
+    width: 100%;
+}
+.searchbox {
+	width: 80%;
+	margin: 0;
+}
+.enterbutton {
+	width: 40px;
+	text-align: center;
+	margin-left: 1px;
+}
